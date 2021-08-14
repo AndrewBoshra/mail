@@ -1,0 +1,58 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="nav">
+    <ul class="nav-list">
+        <a class="nav-item large" id="compose">Compose +</a>
+        <a class="nav-item large selected" id="inbox">Inbox</a>
+        <a class="nav-item large" id="sent">Sent</a>
+        <a class="nav-item large" id="archived">Archived</a>
+    </ul>
+
+    <ul class="nav-info">
+        <span class="nav-item large selected">{{ request.user.email }}</span>
+        <a class="nav-item smaller" href="{% url 'logout' %}">Log Out</a>
+    </ul>
+</div>
+
+<div id="emails-view" class="border padding margin">
+</div>
+<div id="email-view" class="border padding margin">
+</div>
+
+<div id="compose-view">
+
+    <form id="compose-form" class="border padding margin">
+        <h1>New Email</h1>
+        <span id="from-span" class="bold"> From :</span>
+        <div id="from-div">
+            <input disabled class="form-input text" value="{{ request.user.email }}">
+        </div>
+        <span id="to-span" class="bold"> To : </span>
+        <div id="to-div">
+            <input type="email" id="compose-recipients" class="form-input text" placeholder="foo@example.com">
+        </div>
+
+        <span id="subject-span" class="bold">Subject :</span>
+        <div id="subject-div">
+            <input class="form-input text" id="compose-subject" placeholder="Subject">
+        </div>
+        <span id="body-span" class="bold">Body :</span>
+        <textarea class="form-textarea text" id="compose-body" placeholder="Body" cols="10"></textarea>
+        <input type="button" class="btn btn-submit" value="Send" id="compose-submit" />
+        <div id="error" class="error"></div>
+        <div id="success" class="success"></div>
+    </form>
+</div>
+{% endblock %}
+
+{% block script %}
+<!-- <script src="{% static 'mail/inbox.js' %}"></script> -->
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
+<script type="text/babel" src="{% static 'mail/inbox.js' %}">
+
+</script>
+{% endblock %}

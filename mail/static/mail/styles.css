@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+*{
+    font-family: 'Rancho', cursive;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    cursor: pointer;
+text-decoration: none;    
+}
+
+textarea {
+    min-height: 10em;
+}
+.flex
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav{
+    padding: 1em;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20rem;
+}
+.nav-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15rem;
+}
+.nav-item{
+    color: #BCBCBC;
+}
+.selected{
+    color: white;
+}
+.large{
+font-size: 150%;
+}
+.larger{
+    font-size: 200%;
+}
+.smaller{
+    font-size: 100%;
+}
+
+#compose-form>*{
+    font-size:larger; 
+}
+#compose-form{
+
+    display: grid;
+    gap: 1em;
+    grid-template-areas:'. header . . . .' 
+                        '. from-span from subject-span subject .' 
+                        '. to-span to . . .' 
+                        '. body-span body body body .' 
+                        '. body-span body body body .' 
+                        '. . sendbtn log log .';
+
+}
+.form-input{
+    border-radius: .2em;
+    font-size: larger;
+    width: 15em;
+    padding: .2em .2em ;
+}
+#compose-form > h3{
+    grid-area: header;
+}
+
+#from-div {
+    grid-area: from;
+}
+
+#to-div {
+    grid-area: to;
+}
+#subject-div{
+    grid-area: subject;
+}
+
+
+#body-div {
+    grid-area: body;
+}
+#from-span {
+    grid-area: from-span;
+}
+
+#to-span {
+    grid-area: to-span;
+}
+#subject-span{
+    grid-area: subject-span;
+}
+
+
+#body-span {
+    grid-area: body-span;
+}
+
+#compose-form >textarea{
+    grid-area: body;
+    border-radius: .2em;
+    font-size: larger;
+    padding: .5em ;
+}
+.btn{
+    grid-area: sendbtn;
+    color: white;
+    background-color: black;
+    border-radius: 1em;
+    max-width: 5em;
+    padding: .5em;
+}
+
+
+.bold{
+    font-weight: bold;
+}
+.lighter{
+    font-weight: lighter;
+    opacity: .6;
+}
+
+.error{
+    display: none;
+    background-color: rgba(255, 115, 115, 0.74);
+    border-radius: .2em;
+    padding: .5em;
+    grid-area: log;
+    text-align: center;
+}
+
+.success{
+    display: none;
+    background-color: rgba(115, 255, 157, 0.74);
+    border-radius: .2em;
+    border: solid greenyellow 1px;
+    padding: .5em;
+    grid-area: log;
+    text-align: center;
+}
+
+.border{
+    border-style: solid ;
+    border-radius: .2em;
+    border-width: 1px;
+    border-color: #BCBCBC;
+}
+
+.margin{
+    
+    margin: 2rem;
+}
+.padding{
+    padding: 1rem;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.clickable:hover{
+    background-color: whitesmoke;
+    box-shadow :0px 0px 10px gray;
+}
